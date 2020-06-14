@@ -3,15 +3,7 @@ const React = require("react-native");
 const { StyleSheet } = React;
 
 export default {
-  container: {
-    flex: 1,
-    paddingTop: 22
-   },
-   item: {
-     padding: 10,
-     fontSize: 18,
-     height: 44,
-   },
+
 containerView: {
   flex: 1,
 },
@@ -21,7 +13,7 @@ loginScreenContainer: {
 logoText: {
   fontSize: 40,
   fontWeight: "800",
-  marginTop: 150,
+  marginTop: 50,
   marginBottom: 30,
   textAlign: 'center',
 },
@@ -43,13 +35,18 @@ loginFormTextInput: {
 
 },
 
-row:{
-  flex: 1,
-  paddingVertical: 25,
-  paddingHorizontal: 25,
-  backgroundColor: '#fafafa',
-  marginTop:10,
-  flexDirection: 'row',
-  justifyContent: 'space-between',
+regisText: {
+  textAlign: "center",
+  marginTop: 10,
+},
+
+detailFormView :{
+
+},
+detailText :{
+  fontSize: 17,
+  fontWeight: "800",
+  textAlign: 'left',
+  marginLeft: 20,
 },
 };

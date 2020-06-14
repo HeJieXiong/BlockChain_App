@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "./style";
-import {Keyboard, Text, View, TextInput, TouchableWithoutFeedback, Alert, KeyboardAvoidingView, TouchableOpacity, ScrollView } from 'react-native';
+import {Keyboard, Text, View, TextInput, TouchableWithoutFeedback, Alert, KeyboardAvoidingView, TouchableOpacity, ScrollView,FlatList } from 'react-native';
 import { Button } from 'react-native-elements';
 import DatePicker from "react-native-datepicker"
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview'
@@ -16,52 +16,26 @@ export default class Login extends Component {
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <ScrollView style={styles.loginScreenContainer}>
           <View style={styles.loginFormView}>
-          <Text style={styles.logoText}>Đăng ký</Text>
-            <TextInput placeholder="Họ và tên" placeholderColor="#c4c3cb" style={styles.loginFormTextInput} />
-            <TextInput placeholder="Địa chỉ" placeholderColor="#c4c3cb" style={styles.loginFormTextInput}/>
-            <TextInput placeholder="Số CMND" placeholderColor="#c4c3cb" style={styles.loginFormTextInput}/>
-            <TextInput placeholder="Số điện thoại" placeholderColor="#c4c3cb" style={styles.loginFormTextInput}/>
-            <TextInput placeholder="Địa chỉ" placeholderColor="#c4c3cb" style={styles.loginFormTextInput}/>
-            <TouchableOpacity  style={styles.regisText} 
-             onPress={() => {this.props.navigation.navigate('Register')}}
-            >
-            <View  style ={{flexDirection: "row"}}>
-						<View style={{paddingTop:10,}}>
-						<Text style={styles.DoBText}> Ngày sinh: </Text>
-						</View>
-						<DatePicker
-							style={{width: 200}}
-							
-							mode="date"
-							placeholder="select date"
-							format="YYYY-MM-DD"
-							minDate="1950-05-01"
-							maxDate="2019-01-01"
-							confirmBtnText="Confirm"
-							cancelBtnText="Cancel"
-							customStyles={{
-							  dateIcon: {
-								position: 'absolute',
-								left: 0,
-								top: 4,
-								marginLeft: 0
-							  },
-							  dateInput: {
-								marginLeft: 30
-							  }
-							}}
-							onDateChange={(date) => {this.setState({DoB: date})}}
-						/>
-            
-					</View>
-           </TouchableOpacity>
-           <TextInput placeholder="Username" placeholderColor="#c4c3cb" style={styles.loginFormTextInput} />
-            <TextInput placeholder="Password" placeholderColor="#c4c3cb" style={styles.loginFormTextInput} secureTextEntry={true}/>
-            <Button
-              buttonStyle={styles.loginButton}
-              onPress={() => this.onLoginPress()}
-              title="Đăng ký"
-            />
+          <FlatList
+          data={[
+            {key: 'Devin'},
+            {key: 'Dan'},
+            {key: 'Dominic'},
+            {key: 'Jackson'},
+            {key: 'James'},
+            {key: 'Joel'},
+            {key: 'John'},
+            {key: 'Jillian'},
+            {key: 'Jimmy'},
+            {key: 'Julie'},
+          ]}
+          renderItem={({item}) => (
+          <View style={styles.row}>
+          <Text style={styles.item}>{item.key}</Text>
+          <Button  onPress={() => {this.props.navigation.navigate('Detail')}} title="Chi tiết"/>
+          </View>
+          )}
+          />
           </View>
         </ScrollView>
       </TouchableWithoutFeedback>
