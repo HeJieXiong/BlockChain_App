@@ -4,7 +4,8 @@ import {Keyboard, Text, View, TextInput, TouchableWithoutFeedback, Alert, Keyboa
 import { Button } from 'react-native-elements';
 import DatePicker from "react-native-datepicker"
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview'
-import { AsyncStorage,Picker } from "react-native"
+import { AsyncStorage } from "react-native"
+import {Picker} from '@react-native-community/picker';
 import Config from "./../../config"
 const appId = "1047121222092614"
 

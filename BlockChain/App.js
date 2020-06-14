@@ -8,6 +8,7 @@ import Register from './App/scr/screens/Register/Register';
 import Transaction from './App/scr/screens/Transaction/Transaction';
 import History from './App/scr/screens/History/History';
 import Detail from './App/scr/screens/Detail/Detail';
+import HomePage from './App/scr/screens/HomePage/HomePage';
 function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -28,9 +29,13 @@ function HomeScreen({ navigation }) {
         title="Go to Register"
         onPress={() => navigation.navigate('Register')}
       />
-       <Button
+      <Button
         title="Go to Details"
         onPress={() => navigation.navigate('Detail')}
+      />
+       <Button
+        title="Go to HomePage"
+        onPress={() => navigation.navigate('HomePage')}
       />
     </View>
   );
@@ -50,6 +55,7 @@ function App() {
         <Stack.Screen name="Transaction" component={Transaction} />
         <Stack.Screen name="History" component={History} />
         <Stack.Screen name="Detail" component={Detail} />
+        <Stack.Screen name="HomePage" component={HomePage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
